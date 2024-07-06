@@ -1,0 +1,53 @@
+section {
+	display: grid;
+	place-content: center;
+	min-height: calc(100vh - 50px);
+	gap: 10px;
+}
+
+form {
+	border: 2px solid hsl(0, 0%, 70%);
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	width: 350px;
+	padding: 20px;
+	gap: 10px;
+	border-radius: 5px;
+}
+
+input {
+	width: 100%;
+	padding: 10px;
+	font-size: 1rem;
+	border-radius: 3px;
+	border: 1px solid goldenrod;
+	outline: none;
+}
+
+input:focus {
+	outline: 1px solid goldenrod;
+}
+
+input[type=submit]{
+	border-radius: 50px;
+	cursor: pointer;
+	background-color: goldenrod;
+	color: white;
+	font-weight: bold;
+}
+
+input[type=submit]:hover {
+	background-color: gold;
+}
+
+#error {
+	position: absolute;
+	top: 30%;
+	right: 10%;
+	padding: 20px;
+	border: 1px solid red;
+	color: red;
+	display: flex;
+	gap: 20px; 
+}
