@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}SignUp{% endblock %}
+{% block css %}{% static 'signup/signup.css' %}{% endblock %}
+{% block js %}{% static 'signup/signup.js' %}{% endblock %}
+
+
+{% block content %} 
+
+	{% if error %}
+		<p id="error">{{ error }}<span onclick="this.parentElement.style.display='none'">&#10006;</span></p>
+	{% endif %}
+
+	<section>
+		<form autocomplete="off" action="adduser/" method="post">
+			{% csrf_token %}
+			<input type="text" autocomplete="new-text" name="name" autofocus placeholder="name" required>
+			<input type="email" autocomplete="new-email" name="email" placeholder="email" required>
+			<input type="password" autocomplete="new-password" name="password" placeholder="password" required>
+			<input type="password" autocomplete="new-password" name="confirm_password" placeholder="confirm password" required>
+			<input type="submit" name="submit" value="SignUp">
+		</form>
+	</section>
+{% endblock %}

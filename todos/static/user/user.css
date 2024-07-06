@@ -1,0 +1,41 @@
+section {
+	display: grid;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	min-height: calc(100vh - 50px);
+}
+
+table {
+  max-width: 500px;
+  padding: 20px;
+	margin: 10px;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 10px;
+}
+
+table #delete {
+	color: red;
+}
+
+#update {
+	color: blue;
+}
+
+#addtodo {
+	text-align: center;
+	padding: 10px 30px;
+	background-color: yellowgreen;
+	border-radius: 20px;
+}
+
+#addtodo:hover {
+	box-shadow: 0 3px 6px hsl(0, 0%, 70%);
+	text-decoration: none;
+}

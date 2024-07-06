@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Add Todo{% endblock title %}
+{% block css %}{% static "addtodo/addtodo.css" %}{% endblock css %}
+
+
+{% block content %}
+<section>
+  <form autocomplete="off" action="addtodo/" method="post">
+    {% csrf_token %}
+    <input type="text" autocomplete="new-text" name="title" autofocus placeholder="title" required>
+    <textarea name="description" id="description" cols="30" rows="5" placeholder="description" required autocomplete="off"></textarea>
+    <input type="submit" name="submit" value="Add">
+  </form>
+</section>
+{% endblock content %}

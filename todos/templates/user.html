@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}User{% endblock title %}
+{% block css %}{% static "user/user.css" %}{% endblock css %}
+
+{% block content %}
+<section>
+	<table>
+		{% if userdata %}
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Description</th>
+				<th>Delete</th>
+				<th>Update</th>
+			</tr>
+		</thead>
+		{% endif %}
+		
+		{% for data in userdata %}
+		<tbody>
+			<tr>
+				<td>{{ data.title }}</td>
+				<td>{{ data.description }}</td>
+				<td><a id='delete' href="deletedata/{{ data.id }}">Delete</a></td>
+				<td><a id='update' href="update/{{ data.id }}">Update</a></td>
+			</tr>
+		</tbody>
+		{% empty %}
+		<p>You do not have any Todos.</p>
+		{% endfor %}
+	</table>
+	<div>
+		<a id='addtodo' href="add/">Add Todo</a>
+	</div>
+</section>
+{% endblock content %}

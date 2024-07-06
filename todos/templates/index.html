@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %} 
+	<section
+		style="
+			display: grid;
+			place-content: center;
+			min-height: calc(100vh - 50px);
+			gap: 10px;
+		"
+	>
+		<h1>Welcome to todo app.</h1>
+		<p>Create an account to add todos. <a href="/signup/" style="color: goldenrod; font-weight: 500;">SignUp</a></p>
+		<p>already have an account? <a href="/login/" style="color: green; font-weight: 500;">Login</a></p>
+	</section>
+{% endblock %}
