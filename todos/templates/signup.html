@@ -13,6 +13,7 @@
 	{% endif %}
 
 	<section>
+		<h1 style='color: goldenrod; text-align: center; padding: 20px;'>Signup</h1>
 		<form autocomplete="off" action="adduser/" method="post">
 			{% csrf_token %}
 			<input type="text" autocomplete="new-text" name="name" autofocus placeholder="name" required>

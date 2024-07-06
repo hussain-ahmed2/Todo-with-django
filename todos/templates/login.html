@@ -10,6 +10,7 @@
 	{% endif %}
 
 	<section>
+		<h1 style='color: goldenrod; text-align: center; padding: 20px;'>Login</h1>
 		<form autocomplete="off" action="loguser/" method="post">
 			{% csrf_token %}
 			<input type="email" autocomplete="new-email" name="email" placeholder="email" required>

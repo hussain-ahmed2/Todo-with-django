@@ -7,6 +7,7 @@
 
 {% block content %}
 <section>
+  <h1 style='color: goldenrod; text-align: center; padding: 20px;'>Update</h1>
   <form autocomplete="off" action="updatetodo/{{data.id}}" method="post">
     {% csrf_token %}
     <input type="text" autocomplete="new-text" name="title" autofocus placeholder="title" required value="{{ data.title }}">
