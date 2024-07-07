@@ -29,21 +29,24 @@ def adduser(request):
 		context = {
 			'error': 'name field is empty' 
 		}
-		return HttpResponse(template.render(context, request))
+		return HttpResponseRedirect(reverse('signup'))
 
 	if email == '':
 		context = {
 			'error': 'email field is empty' 
 		}
-		return HttpResponse(template.render(context, request))
+		return HttpResponseRedirect(reverse('signup'))
 
 	if password == '':
 		context = {
 			'error': 'password field is empty' 
 		}
-		return HttpResponse(template.render(context, request))
+		return HttpResponseRedirect(reverse('signup'))
 
 	if password == confirm_password:
+		exsist = Users.objects.get(email=email)
+		if exsist:
+			return HttpResponseRedirect(reverse('signup'))
 		user = Users(name=name, email=email, password=password)
 		user.save()
 		return HttpResponseRedirect(reverse('login'))
